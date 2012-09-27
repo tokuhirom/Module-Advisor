@@ -54,6 +54,7 @@ my @FEATURE = (
     ['Log::Minimal' => '0.08', 'colourful logging'],
     ['Log::Minimal' => '0.03', 'ddf'],
     ['Proclet' => 0.12, 'Proclet::Declare'],
+    ['DBI', '1.614' => 'AutoInactiveDestroy'],
 );
 
 my @OPTIONAL_MODULES = (
