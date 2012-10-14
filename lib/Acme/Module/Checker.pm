@@ -21,6 +21,7 @@ my @BUG = (
     ['Time::Piece' => '1.16', '<1.15 have timezone related issue'],
     ['DBD::SQLite' => '1.20', 'a lot of bugs.'],
     ['Text::Xslate' => '1.0011', '&apos; bug.'],
+    ['Text::Xslate' => '1.5021', 'segv in "render" recursion call'],
     ['Furl' => '0.39', 'unexpected eof in reading chunked body. It makes busy loop.'],
     ['AnyEvent::MPRPC' => '0.15', 'switch to Data::MessagePack::Stream'],
     ['Data::MessagePack' => '0.46', 'fixed unpacking issue on big-endian system.'],
