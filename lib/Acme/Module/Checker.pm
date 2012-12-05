@@ -2,7 +2,7 @@ package Acme::Module::Checker;
 use strict;
 use warnings;
 use 5.008008;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 use version;
 use ExtUtils::MakeMaker;
 use Carp;
