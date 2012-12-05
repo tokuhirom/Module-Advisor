@@ -1,5 +1,9 @@
 Revision history for Perl extension Acme::Module::Checker
 
+0.05
+
+    - note xslate bug
+
 0.04
 
     - notes about Amon2::DBI
