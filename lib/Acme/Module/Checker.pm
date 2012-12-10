@@ -51,7 +51,7 @@ my @BROKEN = (
 
 my @XS = (
     ['JSON' => 'JSON::XS'],
-    ['PPI' => 'PPI::XS'],
+    # ['PPI' => 'PPI::XS'], # I think PPI::XS is outdated.
     ['Plack' => 'HTTP::Parser::XS'],
 );
 if ($^O eq 'linux') {
