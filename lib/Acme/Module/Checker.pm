@@ -40,7 +40,7 @@ my @BUG = (
     ['Encode::JP::Mobile' => '0.25', 'resolved FULLWIDTH TILDE issue, etc.'],
     ['Template' => '2.15', 'uri filter does not works properly https://rt.cpan.org/Public/Bug/Display.html?id=19593'],
     ['HTML::FillInForm::Lite' => '1.11', 'HTML5 style tags support'],
-
+    ['Proc::Daemon' => '0.12', 'Init() did not close all filehandles reliably in some cases.'],
 );
 
 my @BROKEN = (
