@@ -14,6 +14,7 @@ my $build = Module::Build->new(
     requires             => {
         # 'Exporter'                      => '0',
         'parent'                        => '0',
+        perl => '5.008008',
         # 'Plack'                         => '0.9949',
     },
 

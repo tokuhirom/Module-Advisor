@@ -1,0 +1,291 @@
+
+=encoding utf8
+
+=head1 NAME
+
+Module::Advisor - check a modules you are installed
+
+=head1 SYNOPSIS
+
+    use Module::Advisor;
+    Module::Advisor->new()->check();
+
+=head1 DESCRIPTION
+
+Module::Advisor checks a modules you are installed, and notice if:
+
+=over 4
+
+=item There is a module, have known bugs.
+
+=item There is a module, have optional XS module for better performance.
+
+=item Your are using broken version of CPAN module.
+
+=back
+
+=head1 RULES
+
+Here is a rules to check the modules.
+
+=head2 Modules have security issues.
+
+=over 4
+
+=item Digest <= 1.17
+
+&lt;1.16 have a security issue. which could lead to the injection of arbitrary Perl code
+
+=item Encode <= 2.44
+
+heap overflow
+
+
+=back
+
+=head2 Modules have performance improvements
+
+=over 4
+
+
+=item UNIVERSAL::require <= 0.11
+
+0.11+ is 400% faster
+
+
+=back
+
+=head2 Modules have bugs
+
+=over 4
+
+
+=item Plack <= 0.9982
+
+sanity check to remove newlines from headers
+
+
+=item Time::Piece <= 1.16
+
+&lt;1.15 have timezone related issue
+
+
+=item DBD::SQLite <= 1.20
+
+a lot of bugs.
+
+
+=item Text::Xslate <= 1.0011
+
+&amp;apos; bug.
+
+
+=item Text::Xslate <= 1.5021
+
+segv in &quot;render&quot; recursion call
+
+
+=item Text::Xslate <= 1.6001
+
+&lt;1.6001 possibly memory leaks on VM stack frames. see https://github.com/xslate/p5-Text-Xslate/issues/71
+
+
+=item Furl <= 0.39
+
+unexpected eof in reading chunked body. It makes busy loop.
+
+
+=item AnyEvent::MPRPC <= 0.15
+
+switch to Data::MessagePack::Stream
+
+
+=item Data::MessagePack <= 0.46
+
+fixed unpacking issue on big-endian system.
+
+
+=item Data::MessagePack <= 0.39
+
+packing float numbers fails on some cases
+
+
+=item FCGI::Client <= 0.06
+
+fixed large packet issue
+
+
+=item Starlet <= 0.12
+
+fix infinite loop when connection is closed while receiving response content
+
+
+=item Starman <= 0.2014
+
+$res-&gt;[1] is broken after output (This is actualized with Plack::Middleware::AccessLog::Timed) https://github.com/miyagawa/Starman/pull/31
+
+
+=item Starman <= 0.1006
+
+Fixed 100% CPU loop when an unexpected EOF happens
+
+
+=item Twiggy <= 0.1000
+
+busy loop
+
+
+=item Teng <= 0.14
+
+fixed deflate bug.
+
+
+=item DBIx::Skinny <= 0.0742
+
+txn_scope bug fixed
+
+
+=item DBIx::TransactionManager <= 1.11
+
+not execute begin_work at AutoCommit=0.
+
+
+=item HTTP::MobileAgent <= 0.36
+
+new x-up-devcap-multimedia(StandAloneGPS) support
+
+
+=item HTTP::MobileAgent <= 0.35
+
+Updated $HTMLVerMap and $GPSModelsRe in DoCoMo.pm
+
+
+=item Encode::JP::Mobile <= 0.25
+
+resolved FULLWIDTH TILDE issue, etc.
+
+
+=item Template <= 2.15
+
+uri filter does not works properly https://rt.cpan.org/Public/Bug/Display.html?id=19593
+
+
+=item HTML::FillInForm::Lite <= 1.11
+
+HTML5 style tags support
+
+
+=item Proc::Daemon <= 0.12
+
+Init() did not close all filehandles reliably in some cases.
+
+
+=back
+
+=head2 The version of this module was broken
+
+=over 4
+
+
+=item Amon2::DBI 0.31 has bug.
+
+transaction management bug
+
+
+=item Math::Random::MT 1.15 has bug.
+
+rand() took no notice of argument RT #78200
+
+
+=item Module::Install 1.04 has bug.
+
+Broken, http://weblog.bulknews.net/post/33907905561/do-not-ship-modules-with-module-install-1-04
+
+
+=back
+
+=head2 Recommended XS module for better performance
+
+=over 4
+
+
+=item JSON::XS is recommended
+
+If you are using JSON.
+
+
+=item HTTP::Parser::XS is recommended
+
+If you are using Plack.
+
+
+=item Linux::Inotify2 is recommended
+
+If you are using Filesys::Notify::Simple.
+
+
+=back
+
+=head2 Recommended version to enable good feature
+
+=over 4
+
+
+=item Amon2 <= 3.29 does not have
+
+JSON hijacking detection.
+
+
+=item Log::Minimal <= 0.10 does not have
+
+LM_COLOR
+
+
+=item Log::Minimal <= 0.08 does not have
+
+colourful logging
+
+
+=item Log::Minimal <= 0.03 does not have
+
+ddf
+
+
+=item Proclet <= 0.12 does not have
+
+Proclet::Declare
+
+
+=item DBI <= 1.614 does not have
+
+AutoInactiveDestroy
+
+
+=back
+
+=head2 Recommend modules when using ...
+
+=over 4
+
+
+=item I recommend to install LWP::Protocol::https, if you are using LWP.
+
+Need to support https
+
+
+=back
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>
+
+=head1 SEE ALSO
+
+=head1 LICENSE
+
+Copyright (C) Tokuhiro Matsuno
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut

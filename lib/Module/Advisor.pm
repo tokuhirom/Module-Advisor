@@ -7,16 +7,16 @@ use version;
 use ExtUtils::MakeMaker;
 use Carp;
 
-my @SECURITY = (
+our @SECURITY = (
     ['Digest', '1.17', '<1.16 have a security issue. which could lead to the injection of arbitrary Perl code'],
     ['Encode' => '2.44', 'heap overflow'],
 );
 
-my @PERFORMANCE = (
+our @PERFORMANCE = (
     ['UNIVERSAL::require', 0.11, '0.11+ is 400% faster'],
 );
 
-my @BUG = (
+our @BUG = (
     ['Plack' => '0.9982', 'sanity check to remove newlines from headers'],
     ['Time::Piece' => '1.16', '<1.15 have timezone related issue'],
     ['DBD::SQLite' => '1.20', 'a lot of bugs.'],
@@ -43,13 +43,13 @@ my @BUG = (
     ['Proc::Daemon' => '0.12', 'Init() did not close all filehandles reliably in some cases.'],
 );
 
-my @BROKEN = (
+our @BROKEN = (
     ['Amon2::DBI' => '0.31', 'transaction management bug'],
     ['Math::Random::MT' => '1.15', 'rand() took no notice of argument RT #78200'],
     ['Module::Install' => '1.04', 'Broken, http://weblog.bulknews.net/post/33907905561/do-not-ship-modules-with-module-install-1-04'],
 );
 
-my @XS = (
+our @XS = (
     ['JSON' => 'JSON::XS'],
     # ['PPI' => 'PPI::XS'], # I think PPI::XS is outdated.
     ['Plack' => 'HTTP::Parser::XS'],
@@ -58,7 +58,7 @@ if ($^O eq 'linux') {
     push @XS, ['Filesys::Notify::Simple', 'Linux::Inotify2'];
 }
 
-my @FEATURE = (
+our @FEATURE = (
     ['Amon2' => '3.29', 'JSON hijacking detection.'],
     ['Log::Minimal' => '0.10', 'LM_COLOR'],
     ['Log::Minimal' => '0.08', 'colourful logging'],
@@ -67,7 +67,7 @@ my @FEATURE = (
     ['DBI', '1.614' => 'AutoInactiveDestroy'],
 );
 
-my @OPTIONAL_MODULES = (
+our @OPTIONAL_MODULES = (
     ['LWP', 'LWP::Protocol::https', 'Need to support https'],
 );
 
@@ -202,34 +202,3 @@ if (not defined caller(0)) {
 }
 
 1;
-__END__
-
-=encoding utf8
-
-=head1 NAME
-
-Module::Advisor - check a modules you are installed
-
-=head1 SYNOPSIS
-
-    use Module::Advisor;
-    Module::Advisor->new()->check();
-
-=head1 DESCRIPTION
-
-Module::Advisor checks a modules you are installed, in tokuhirom's rule.
-
-=head1 AUTHOR
-
-Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>
-
-=head1 SEE ALSO
-
-=head1 LICENSE
-
-Copyright (C) Tokuhiro Matsuno
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-=cut

@@ -1,1 +1,1 @@
-lib/Acme/Module/Checker.pm
+lib/Module/Advisor.pod
