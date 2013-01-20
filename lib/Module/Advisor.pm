@@ -1,4 +1,4 @@
-package Acme::Module::Checker;
+package Module::Advisor;
 use strict;
 use warnings;
 use 5.008008;
@@ -208,16 +208,16 @@ __END__
 
 =head1 NAME
 
-Acme::Module::Checker - check a modules you are installed
+Module::Advisor - check a modules you are installed
 
 =head1 SYNOPSIS
 
-    use Acme::Module::Checker;
-    Acme::Module::Checker->new()->check();
+    use Module::Advisor;
+    Module::Advisor->new()->check();
 
 =head1 DESCRIPTION
 
-Acme::Module::Checker checks a modules you are installed, in tokuhirom's rule.
+Module::Advisor checks a modules you are installed, in tokuhirom's rule.
 
 =head1 AUTHOR
 

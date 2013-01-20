@@ -85,7 +85,7 @@ perltidy.ERR$
 ^README.pod$
 ^README.mkdn$
 ^tags$
-^Acme-Module-Checker-
+^Module-Advisor-
 ^MYMETA\.
 \b_build
 ^MANIFEST\.SKIP

@@ -18,8 +18,8 @@ my $build = Module::Build->new(
     },
 
     no_index    => { 'directory' => [ 'inc' ] },
-    name        => 'Acme-Module-Checker',
-    module_name => 'Acme::Module::Checker',
+    name        => 'Module-Advisor',
+    module_name => 'Module::Advisor',
 
     # script_files => [''],
 
