@@ -1,6 +1,8 @@
+author/docgen.pl
 Build.PL
 Changes
 lib/Module/Advisor.pm
+lib/Module/Advisor.pod
 LICENSE
 MANIFEST			This list of files
 META.json
