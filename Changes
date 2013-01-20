@@ -1,5 +1,10 @@
 Revision history for Perl extension Module::Advisor
 
+0.07 2013-01-20T19:14:17
+
+    - renamed to Module::Advisor from Acme::Module::Checker.
+    - note about Proc::daemon
+
 0.06
 
     - HTML::FillInForm::Lite
