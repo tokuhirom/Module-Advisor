@@ -2,6 +2,10 @@ use strict;
 use warnings;
 use Module::Build;
 
+if (-d '.git') {
+    system("perl author/docgen.pl > lib/Module/Advisor.pod");
+}
+
 my $build = Module::Build->new(
     license              => 'perl',
     dynamic_config       => 0,

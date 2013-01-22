@@ -180,6 +180,11 @@ HTML5 style tags support
 Init() did not close all filehandles reliably in some cases.
 
 
+=item ExclusiveLock::Guard <= 0.04
+
+change of the file stat timing (measures under high load)
+
+
 =back
 
 =head2 The version of this module was broken
