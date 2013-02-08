@@ -3,20 +3,21 @@ use strict;
 use warnings;
 use 5.008008;
 our $VERSION = '0.10';
-use version;
-use ExtUtils::MakeMaker;
+use Module::Metadata;
+use CPAN::Meta::Requirements;
 use Carp;
 
 our @SECURITY = (
-    ['Digest', '1.17', '<1.16 have a security issue. which could lead to the injection of arbitrary Perl code'],
-    ['Encode' => '2.44', 'heap overflow'],
+    ['Digest' => '< 1.17', 'have a security issue. which could lead to the injection of arbitrary Perl code'],
+    ['Encode' => '< 2.44', 'heap overflow'],
 );
 
 our @PERFORMANCE = (
-    ['UNIVERSAL::require', 0.11, '0.11+ is 400% faster'],
+    ['UNIVERSAL::require', '< 0.11', 'is 400% faster'],
 );
 
 our @BUG = (
+<<<<<<< HEAD
     ['Plack' => '0.9982', 'sanity check to remove newlines from headers'],
     ['Time::Piece' => '1.16', '<1.15 have timezone related issue'],
     ['DBD::SQLite' => '1.20', 'a lot of bugs.'],
@@ -49,6 +50,38 @@ our @BROKEN = (
     ['Math::Random::MT' => '1.15', 'rand() took no notice of argument RT #78200'],
     ['Module::Install' => '1.04', 'Broken, http://weblog.bulknews.net/post/33907905561/do-not-ship-modules-with-module-install-1-04'],
     ['Mouse' => '1.04', 'memory leak, http://d.hatena.ne.jp/gfx/20130208/1360283357'],
+=======
+    ['Plack' => '< 0.9982', 'sanity check to remove newlines from headers'],
+    ['Time::Piece' => '< 1.16', 'have timezone related issue'],
+    ['DBD::SQLite' => '< 1.20', 'a lot of bugs.'],
+    ['Text::Xslate' => '< 1.0011', '&apos; bug.'],
+    ['Text::Xslate' => '< 1.5021', 'segv in "render" recursion call'],
+    ['Text::Xslate' => '< 1.6001', 'possibly memory leaks on VM stack frames. see https://github.com/xslate/p5-Text-Xslate/issues/71'],
+    ['Furl' => '< 0.39', 'unexpected eof in reading chunked body. It makes busy loop.'],
+    ['AnyEvent::MPRPC' => '< 0.15', 'switch to Data::MessagePack::Stream'],
+    ['Data::MessagePack' => '< 0.46', 'fixed unpacking issue on big-endian system.'],
+    ['Data::MessagePack' => '< 0.39', 'packing float numbers fails on some cases'],
+    ['FCGI::Client' => '< 0.06', 'fixed large packet issue'],
+    ['Starlet' => '< 0.12', 'fix infinite loop when connection is closed while receiving response content'],
+    ['Starman' => '< 0.2014', '$res->[1] is broken after output (This is actualized with Plack::Middleware::AccessLog::Timed) https://github.com/miyagawa/Starman/pull/31'],
+    ['Starman' => '< 0.1006', 'Fixed 100% CPU loop when an unexpected EOF happens'],
+    ['Twiggy' => '< 0.1000', 'busy loop'],
+    ['Teng', '< 0.14', 'fixed deflate bug.'],
+    ['DBIx::Skinny', '< 0.0742', 'txn_scope bug fixed'],
+    ['DBIx::TransactionManager', '< 1.11', 'not execute begin_work at AutoCommit=0.'],
+    ['HTTP::MobileAgent' => '< 0.36', 'new x-up-devcap-multimedia(StandAloneGPS) support'],
+    ['HTTP::MobileAgent' => '< 0.35', 'Updated $HTMLVerMap and $GPSModelsRe in DoCoMo.pm'],
+    ['Encode::JP::Mobile' => '< 0.25', 'resolved FULLWIDTH TILDE issue, etc.'],
+    ['Template' => '< 2.15', 'uri filter does not works properly https://rt.cpan.org/Public/Bug/Display.html?id=19593'],
+    ['HTML::FillInForm::Lite' => '< 1.11', 'HTML5 style tags support'],
+    ['Proc::Daemon' => '< 0.12', 'Init() did not close all filehandles reliably in some cases.'],
+    ['ExclusiveLock::Guard' => '< 0.04', 'change of the file stat timing (measures under high load)'],
+
+    # Broken in specific versions
+    ['Amon2::DBI' => '== 0.31', 'transaction management bug'],
+    ['Math::Random::MT' => '== 1.15', 'rand() took no notice of argument RT #78200'],
+    ['Module::Install' => '== 1.04', 'Broken, http://weblog.bulknews.net/post/33907905561/do-not-ship-modules-with-module-install-1-04'],
+>>>>>>> 80fc94bfba8ca51f863ae0ce81945c898bab2216
 );
 
 our @XS = (
@@ -61,12 +94,12 @@ if ($^O eq 'linux') {
 }
 
 our @FEATURE = (
-    ['Amon2' => '3.29', 'JSON hijacking detection.'],
-    ['Log::Minimal' => '0.10', 'LM_COLOR'],
-    ['Log::Minimal' => '0.08', 'colourful logging'],
-    ['Log::Minimal' => '0.03', 'ddf'],
-    ['Proclet' => 0.12, 'Proclet::Declare'],
-    ['DBI', '1.614' => 'AutoInactiveDestroy'],
+    ['Amon2' => '< 3.29', 'JSON hijacking detection.'],
+    ['Log::Minimal' => '< 0.10', 'LM_COLOR'],
+    ['Log::Minimal' => '< 0.08', 'colourful logging'],
+    ['Log::Minimal' => '< 0.03', 'ddf'],
+    ['Proclet' => '< 0.12', 'Proclet::Declare'],
+    ['DBI', '< 1.614' => 'AutoInactiveDestroy'],
 );
 
 our @OPTIONAL_MODULES = (
@@ -76,11 +109,8 @@ our @OPTIONAL_MODULES = (
 # ref. Module::Version
 sub get_version {
     my $module = shift or croak 'Must get a module name';
-    my $file = MM->_installed_file_for_module($module);
-
-    $file || return;
-
-    return MM->parse_version($file);
+    my $metadata = Module::Metadata->new_from_module($module);
+    $metadata ? $metadata->version : undef;
 }
 
 sub debugf {
@@ -100,10 +130,18 @@ sub check {
     $failed += $self->check_security();
     $failed += $self->check_performance();
     $failed += $self->check_bugs();
-    $failed += $self->check_bugs_on_specific_version();
     $failed += $self->check_xs_installed();
     $failed += $self->check_feature();
     return $failed;
+}
+
+sub matches_version {
+    my($self, $module, $spec, $version) = @_;
+
+    my $requirements = CPAN::Meta::Requirements->new;
+    $requirements->add_string_requirement($module, $spec);
+
+    $requirements->accepts_module($module, $version);
 }
 
 sub _check_issue {
@@ -113,8 +151,8 @@ sub _check_issue {
         my $ver = get_version($row->[0]);
         if (defined $ver) {
             $self->debugf("$row->[0] $ver");
-            if (version->new($ver) < version->new($row->[1])) {
-                printf "[$type_name] %s %s<%s: %s\n", $row->[0], $ver, $row->[1], $row->[2];
+            if ($self->matches_version($row->[0], $row->[1], $ver)) {
+                printf "[$type_name] %s %s %s: %s\n", $row->[0], $ver, $row->[1], $row->[2];
                 $failed++;
             }
         } else {
@@ -137,23 +175,6 @@ sub check_performance {
 sub check_bugs {
     my $self = shift;
     $self->_check_issue(\@BUG, 'BUG');
-}
-
-sub check_bugs_on_specific_version {
-    my ($self) = @_;
-    my $failed = 0;
-    for my $row (@BROKEN) {
-        my $ver = get_version($row->[0]);
-        if (defined $ver) {
-            $self->debugf("$row->[0] $ver");
-            if (version->new($ver) == version->new($row->[1])) {
-                printf "[BROKEN] %s %s: %s\n", $row->[0], $ver, $row->[2];
-                $failed++;
-            }
-        } else {
-            $self->debugf("$row->[0] is not found");
-        }
-    }
 }
 
 sub check_xs_installed {
