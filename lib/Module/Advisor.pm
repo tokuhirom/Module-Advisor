@@ -2,7 +2,7 @@ package Module::Advisor;
 use strict;
 use warnings;
 use 5.008008;
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 use version;
 use ExtUtils::MakeMaker;
 use Carp;

@@ -1,5 +1,9 @@
 Revision history for Perl extension Module::Advisor
 
+0.10 2013-02-08T10:55:00
+
+    - Mouse 1.04 has memory leaks
+
 0.09 2013-01-22T12:33:08
 
     - added ExclusiveLock::Guard 0.04
