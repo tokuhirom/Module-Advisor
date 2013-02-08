@@ -18,6 +18,8 @@ my $build = Module::Build->new(
     requires             => {
         # 'Exporter'                      => '0',
         'parent'                        => '0',
+        'CPAN::Meta::Requirements' => '2.122',
+        'Module::Metadata'         => '1.000000',
         perl => '5.008008',
         # 'Plack'                         => '0.9949',
     },
