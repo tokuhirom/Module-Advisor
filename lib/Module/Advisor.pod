@@ -207,6 +207,11 @@ rand() took no notice of argument RT #78200
 Broken, http://weblog.bulknews.net/post/33907905561/do-not-ship-modules-with-module-install-1-04
 
 
+=item Mouse 1.04 has bug.
+
+memory leak, http://d.hatena.ne.jp/gfx/20130208/1360283357
+
+
 =back
 
 =head2 Recommended XS module for better performance

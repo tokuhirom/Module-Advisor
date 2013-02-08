@@ -48,6 +48,7 @@ our @BROKEN = (
     ['Amon2::DBI' => '0.31', 'transaction management bug'],
     ['Math::Random::MT' => '1.15', 'rand() took no notice of argument RT #78200'],
     ['Module::Install' => '1.04', 'Broken, http://weblog.bulknews.net/post/33907905561/do-not-ship-modules-with-module-install-1-04'],
+    ['Mouse' => '1.04', 'memory leak, http://d.hatena.ne.jp/gfx/20130208/1360283357'],
 );
 
 our @XS = (
