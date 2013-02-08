@@ -2,7 +2,7 @@ package Module::Advisor;
 use strict;
 use warnings;
 use 5.008008;
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 use Module::Metadata;
 use CPAN::Meta::Requirements;
 use Carp;
@@ -17,40 +17,6 @@ our @PERFORMANCE = (
 );
 
 our @BUG = (
-<<<<<<< HEAD
-    ['Plack' => '0.9982', 'sanity check to remove newlines from headers'],
-    ['Time::Piece' => '1.16', '<1.15 have timezone related issue'],
-    ['DBD::SQLite' => '1.20', 'a lot of bugs.'],
-    ['Text::Xslate' => '1.0011', '&apos; bug.'],
-    ['Text::Xslate' => '1.5021', 'segv in "render" recursion call'],
-    ['Text::Xslate' => '1.6001', '<1.6001 possibly memory leaks on VM stack frames. see https://github.com/xslate/p5-Text-Xslate/issues/71'],
-    ['Furl' => '0.39', 'unexpected eof in reading chunked body. It makes busy loop.'],
-    ['AnyEvent::MPRPC' => '0.15', 'switch to Data::MessagePack::Stream'],
-    ['Data::MessagePack' => '0.46', 'fixed unpacking issue on big-endian system.'],
-    ['Data::MessagePack' => '0.39', 'packing float numbers fails on some cases'],
-    ['FCGI::Client' => '0.06', 'fixed large packet issue'],
-    ['Starlet' => 0.12, 'fix infinite loop when connection is closed while receiving response content'],
-    ['Starman' => 0.2014, '$res->[1] is broken after output (This is actualized with Plack::Middleware::AccessLog::Timed) https://github.com/miyagawa/Starman/pull/31'],
-    ['Starman' => 0.1006, 'Fixed 100% CPU loop when an unexpected EOF happens'],
-    ['Twiggy', '0.1000', 'busy loop'],
-    ['Teng', '0.14', 'fixed deflate bug.'],
-    ['DBIx::Skinny', 0.0742, 'txn_scope bug fixed'],
-    ['DBIx::TransactionManager', 1.11, 'not execute begin_work at AutoCommit=0.'],
-    ['HTTP::MobileAgent' => '0.36', 'new x-up-devcap-multimedia(StandAloneGPS) support'],
-    ['HTTP::MobileAgent' => '0.35', 'Updated $HTMLVerMap and $GPSModelsRe in DoCoMo.pm'],
-    ['Encode::JP::Mobile' => '0.25', 'resolved FULLWIDTH TILDE issue, etc.'],
-    ['Template' => '2.15', 'uri filter does not works properly https://rt.cpan.org/Public/Bug/Display.html?id=19593'],
-    ['HTML::FillInForm::Lite' => '1.11', 'HTML5 style tags support'],
-    ['Proc::Daemon' => '0.12', 'Init() did not close all filehandles reliably in some cases.'],
-    ['ExclusiveLock::Guard' => '0.04', 'change of the file stat timing (measures under high load)'],
-);
-
-our @BROKEN = (
-    ['Amon2::DBI' => '0.31', 'transaction management bug'],
-    ['Math::Random::MT' => '1.15', 'rand() took no notice of argument RT #78200'],
-    ['Module::Install' => '1.04', 'Broken, http://weblog.bulknews.net/post/33907905561/do-not-ship-modules-with-module-install-1-04'],
-    ['Mouse' => '1.04', 'memory leak, http://d.hatena.ne.jp/gfx/20130208/1360283357'],
-=======
     ['Plack' => '< 0.9982', 'sanity check to remove newlines from headers'],
     ['Time::Piece' => '< 1.16', 'have timezone related issue'],
     ['DBD::SQLite' => '< 1.20', 'a lot of bugs.'],
@@ -81,7 +47,7 @@ our @BROKEN = (
     ['Amon2::DBI' => '== 0.31', 'transaction management bug'],
     ['Math::Random::MT' => '== 1.15', 'rand() took no notice of argument RT #78200'],
     ['Module::Install' => '== 1.04', 'Broken, http://weblog.bulknews.net/post/33907905561/do-not-ship-modules-with-module-install-1-04'],
->>>>>>> 80fc94bfba8ca51f863ae0ce81945c898bab2216
+    ['Mouse' => '== 1.04', 'Broken, http://d.hatena.ne.jp/gfx/20130208/1360283357'],
 );
 
 our @XS = (

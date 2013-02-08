@@ -65,7 +65,7 @@ Here is a rules to check the modules.
 =over 4
 
 ? for my $module (@Module::Advisor::SECURITY) {
-=item <?= $module->[0] ?> <= <?= $module->[1] ?>
+=item <?= $module->[0] ?> <?= $module->[1] ?>
 
 <?= $module->[2] ?>
 
@@ -79,7 +79,7 @@ Here is a rules to check the modules.
 
 ? for my $module (@Module::Advisor::PERFORMANCE) {
 
-=item <?= $module->[0] ?> <= <?= $module->[1] ?>
+=item <?= $module->[0] ?> <?= $module->[1] ?>
 
 <?= $module->[2] ?>
 
@@ -93,7 +93,7 @@ Here is a rules to check the modules.
 
 ? for my $module (@Module::Advisor::BUG) {
 
-=item <?= $module->[0] ?> <= <?= $module->[1] ?>
+=item <?= $module->[0] ?> <?= $module->[1] ?>
 
 <?= $module->[2] ?>
 
@@ -135,7 +135,7 @@ If you are using <?= $module->[0] ?>.
 
 ? for my $module (@Module::Advisor::FEATURE) {
 
-=item <?= $module->[0] ?> <= <?= $module->[1] ?> does not have
+=item <?= $module->[0] ?> <?= $module->[1] ?> does not have
 
 <?= $module->[2] ?>
 
