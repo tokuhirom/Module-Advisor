@@ -34,7 +34,7 @@ Here is a rules to check the modules.
 
 =item Digest <= 1.17
 
-&lt;1.16 have a security issue. which could lead to the injection of arbitrary Perl code
+E<lt>1.16 have a security issue. which could lead to the injection of arbitrary Perl code
 
 =item Encode <= 2.44
 
@@ -67,7 +67,7 @@ sanity check to remove newlines from headers
 
 =item Time::Piece <= 1.16
 
-&lt;1.15 have timezone related issue
+E<lt>1.15 have timezone related issue
 
 
 =item DBD::SQLite <= 1.20
@@ -77,17 +77,17 @@ a lot of bugs.
 
 =item Text::Xslate <= 1.0011
 
-&amp;apos; bug.
+&apos; bug.
 
 
 =item Text::Xslate <= 1.5021
 
-segv in &quot;render&quot; recursion call
+segv in "render" recursion call
 
 
 =item Text::Xslate <= 1.6001
 
-&lt;1.6001 possibly memory leaks on VM stack frames. see https://github.com/xslate/p5-Text-Xslate/issues/71
+E<lt>1.6001 possibly memory leaks on VM stack frames. see https://github.com/xslate/p5-Text-Xslate/issues/71
 
 
 =item Furl <= 0.39
@@ -122,7 +122,7 @@ fix infinite loop when connection is closed while receiving response content
 
 =item Starman <= 0.2014
 
-$res-&gt;[1] is broken after output (This is actualized with Plack::Middleware::AccessLog::Timed) https://github.com/miyagawa/Starman/pull/31
+$res-E<gt>[1] is broken after output (This is actualized with Plack::Middleware::AccessLog::Timed) https://github.com/miyagawa/Starman/pull/31
 
 
 =item Starman <= 0.1006

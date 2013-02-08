@@ -8,8 +8,25 @@ use Text::MicroTemplate qw/render_mt/;
 use lib 'lib';
 use Module::Advisor;
 
+our %pod_escape_table = ('>' => 'E<gt>', '<' => 'E<lt>');
+
+sub escape_pod {
+    my ($variable) = @_;
+
+    my $source = qq{
+        do{
+            $variable =~ s/([><])/\$::pod_escape_table{\$1}/ge;
+            $variable;
+        }
+    };
+    $source =~ s/\n//g; # to keep line numbers
+    return $source;
+}
+
 my $tmpl = join '', <DATA>;
-my $result = render_mt($tmpl);
+my $render = Text::MicroTemplate->new(template => $tmpl,
+                                      escape_func => \&escape_pod);
+my $result = $render->build->();
 print $result;
 
 __DATA__
