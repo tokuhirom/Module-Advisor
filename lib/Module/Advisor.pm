@@ -10,6 +10,7 @@ use Carp;
 our @SECURITY = (
     ['Digest' => '< 1.17', 'have a security issue. which could lead to the injection of arbitrary Perl code'],
     ['Encode' => '< 2.44', 'heap overflow'],
+    ['Encode' => '< 2.49', 'memory leaks'],
 );
 
 our @PERFORMANCE = (

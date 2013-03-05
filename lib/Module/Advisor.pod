@@ -40,6 +40,10 @@ have a security issue. which could lead to the injection of arbitrary Perl code
 
 heap overflow
 
+=item Encode E<lt> 2.49
+
+memory leaks
+
 
 =back
 
