@@ -1,5 +1,9 @@
 Revision history for Perl extension Module::Advisor
 
+0.12 2013-03-05T15:12:56
+
+    - Notes about Encode@2.49 memory leak fix
+
 0.11 2013-02-08T11:42:08
 
     - use Module::Metadata and CPAN::Meta::Requirements
