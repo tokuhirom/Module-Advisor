@@ -1,0 +1,66 @@
+{
+   "abstract" : "check",
+   "author" : [
+      "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Minilla/v0.0.49, CPAN::Meta::Converter version 2.120921",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Module-Advisor",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Test::More" : "0.98",
+            "Test::Requires" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "CPAN::Meta" : "0",
+            "Module::Build" : "0.38"
+         }
+      },
+      "develop" : {
+         "requires" : {
+            "Pod::Wordlist::hanekomu" : "0",
+            "Test::CPAN::Meta" : "0",
+            "Test::MinimumVersion" : "0.10108",
+            "Test::Pod" : "1.41",
+            "Test::Spelling" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "CPAN::Meta::Requirements" : "2.122",
+            "Module::Metadata" : "1.000000",
+            "parent" : "0",
+            "perl" : "5.008008"
+         }
+      }
+   },
+   "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/tokuhirom/Module-Advisor/issues"
+      },
+      "homepage" : "https://github.com/tokuhirom/Module-Advisor",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/tokuhirom/Module-Advisor.git",
+         "web" : "https://github.com/tokuhirom/Module-Advisor"
+      }
+   },
+   "version" : "0.12",
+   "x_contributors" : [
+      "Daisuke Murase <typester@cpan.org>",
+      "Syohei YOSHIDA <syohex@gmail.com>",
+      "Tatsuhiko Miyagawa <miyagawa@bulknews.net>",
+      "tokuhirom <tokuhirom@gmail.com>"
+   ]
+}
