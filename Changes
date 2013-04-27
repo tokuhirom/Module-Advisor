@@ -2,6 +2,10 @@ Revision history for Perl extension Module::Advisor
 
 {{$NEXT}}
 
+0.13 2013-04-27T14:07:44Z
+
+    - Notes Module::Install::XSUtil
+
 0.12 2013-03-05T15:12:56
 
     - Notes about Encode@2.49 memory leak fix

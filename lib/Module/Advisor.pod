@@ -1,6 +1,8 @@
 
 =encoding utf8
 
+=for stopwords ddf timezone segv eof x-up-devcap-multimedia StandAloneGPS filehandles colourful newlines big-endian x-up-devcap-multimedia(StandAloneGPS)
+
 =head1 NAME
 
 Module::Advisor - check a modules you are installed
@@ -273,6 +275,11 @@ Proclet::Declare
 =item DBI E<lt> 1.614 does not have
 
 AutoInactiveDestroy
+
+
+=item Module::Install::XSUtil E<lt> 0.44 does not have
+
+PUREPERL_ONLY=1
 
 
 =back

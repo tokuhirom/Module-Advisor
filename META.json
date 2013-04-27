@@ -67,7 +67,7 @@
          "web" : "https://github.com/tokuhirom/Module-Advisor"
       }
    },
-   "version" : "0.12",
+   "version" : "0.13",
    "x_contributors" : [
       "Daisuke Murase <typester@cpan.org>",
       "Syohei YOSHIDA <syohex@gmail.com>",

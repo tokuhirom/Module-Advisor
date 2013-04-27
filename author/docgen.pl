@@ -33,6 +33,8 @@ __DATA__
 
 =encoding utf8
 
+=for stopwords ddf timezone segv eof x-up-devcap-multimedia StandAloneGPS filehandles colourful newlines big-endian x-up-devcap-multimedia(StandAloneGPS)
+
 =head1 NAME
 
 Module::Advisor - check a modules you are installed
