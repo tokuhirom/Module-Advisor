@@ -1,5 +1,7 @@
 Revision history for Perl extension Module::Advisor
 
+{{$NEXT}}
+
 0.12 2013-03-05T15:12:56
 
     - Notes about Encode@2.49 memory leak fix

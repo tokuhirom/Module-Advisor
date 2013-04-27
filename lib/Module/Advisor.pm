@@ -67,6 +67,7 @@ our @FEATURE = (
     ['Log::Minimal' => '< 0.03', 'ddf'],
     ['Proclet' => '< 0.12', 'Proclet::Declare'],
     ['DBI', '< 1.614' => 'AutoInactiveDestroy'],
+    ['Module::Install::XSUtil', '< 0.44' => 'PUREPERL_ONLY=1'],
 );
 
 our @OPTIONAL_MODULES = (

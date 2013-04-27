@@ -21,3 +21,4 @@ README
 /Build
 !Build/
 !META.json
+!LICENSE

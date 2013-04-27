@@ -1,38 +1,43 @@
 {
-   "abstract" : "check",
+   "abstract" : "check a modules you are installed",
    "author" : [
       "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.0.49, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Minilla/v0.0.56, CPAN::Meta::Converter version 2.130880",
    "license" : [
-      "perl_5"
+      "unknown"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
    "name" : "Module-Advisor",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "xt",
+         "inc",
+         "share",
+         "eg",
+         "examples",
+         "author"
+      ]
+   },
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Test::More" : "0.98",
-            "Test::Requires" : "0"
-         }
-      },
       "configure" : {
          "requires" : {
             "CPAN::Meta" : "0",
+            "CPAN::Meta::Prereqs" : "0",
             "Module::Build" : "0.38"
          }
       },
       "develop" : {
          "requires" : {
-            "Pod::Wordlist::hanekomu" : "0",
             "Test::CPAN::Meta" : "0",
             "Test::MinimumVersion" : "0.10108",
             "Test::Pod" : "1.41",
-            "Test::Spelling" : "0"
+            "Test::Spellunker" : "v0.2.2"
          }
       },
       "runtime" : {
@@ -41,6 +46,12 @@
             "Module::Metadata" : "1.000000",
             "parent" : "0",
             "perl" : "5.008008"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : "0.98",
+            "Test::Requires" : "0"
          }
       }
    },
