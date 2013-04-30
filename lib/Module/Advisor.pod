@@ -191,6 +191,11 @@ Init() did not close all filehandles reliably in some cases.
 change of the file stat timing (measures under high load)
 
 
+=item autobox E<lt> 2.78
+
+segv in END block https://rt.cpan.org/Ticket/Display.html?id=80400
+
+
 =item Amon2::DBI == 0.31
 
 transaction management bug

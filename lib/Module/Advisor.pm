@@ -43,6 +43,7 @@ our @BUG = (
     ['HTML::FillInForm::Lite' => '< 1.11', 'HTML5 style tags support'],
     ['Proc::Daemon' => '< 0.12', 'Init() did not close all filehandles reliably in some cases.'],
     ['ExclusiveLock::Guard' => '< 0.04', 'change of the file stat timing (measures under high load)'],
+    ['autobox', '< 2.78', 'segv in END block https://rt.cpan.org/Ticket/Display.html?id=80400'],
 
     # Broken in specific versions
     ['Amon2::DBI' => '== 0.31', 'transaction management bug'],
