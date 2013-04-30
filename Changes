@@ -2,6 +2,10 @@ Revision history for Perl extension Module::Advisor
 
 {{$NEXT}}
 
+0.14 2013-04-30T22:51:05Z
+
+    - Notes autobox 2.78
+
 0.13 2013-04-27T14:07:44Z
 
     - Notes Module::Install::XSUtil

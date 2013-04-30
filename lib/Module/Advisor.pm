@@ -2,7 +2,7 @@ package Module::Advisor;
 use strict;
 use warnings;
 use 5.008008;
-our $VERSION = '0.13';
+our $VERSION = '0.14';
 use Module::Metadata;
 use CPAN::Meta::Requirements;
 use Carp;
