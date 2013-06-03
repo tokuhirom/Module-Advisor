@@ -24,6 +24,7 @@ our @BUG = (
     ['Text::Xslate' => '< 1.0011', '&apos; bug.'],
     ['Text::Xslate' => '< 1.5021', 'segv in "render" recursion call'],
     ['Text::Xslate' => '< 1.6001', 'possibly memory leaks on VM stack frames. see https://github.com/xslate/p5-Text-Xslate/issues/71'],
+    ['Text::Xslate' => '< 2.0005', 'Nested WRAPPER broken https://github.com/xslate/p5-Text-Xslate/issues/79'],
     ['Furl' => '< 0.39', 'unexpected eof in reading chunked body. It makes busy loop.'],
     ['AnyEvent::MPRPC' => '< 0.15', 'switch to Data::MessagePack::Stream'],
     ['Data::MessagePack' => '< 0.46', 'fixed unpacking issue on big-endian system.'],
