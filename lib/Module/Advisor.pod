@@ -81,6 +81,11 @@ have timezone related issue
 a lot of bugs.
 
 
+=item Mouse E<gt>= 1.07, E<lt> 1.12
+
+Memory leaks in trigger
+
+
 =item Text::Xslate E<lt> 1.0011
 
 &apos; bug.
@@ -94,6 +99,11 @@ segv in "render" recursion call
 =item Text::Xslate E<lt> 1.6001
 
 possibly memory leaks on VM stack frames. see https://github.com/xslate/p5-Text-Xslate/issues/71
+
+
+=item Text::Xslate E<lt> 2.0005
+
+Nested WRAPPER broken https://github.com/xslate/p5-Text-Xslate/issues/79
 
 
 =item Furl E<lt> 0.39

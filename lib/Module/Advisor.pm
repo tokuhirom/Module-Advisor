@@ -21,6 +21,7 @@ our @BUG = (
     ['Plack' => '< 0.9982', 'sanity check to remove newlines from headers'],
     ['Time::Piece' => '< 1.16', 'have timezone related issue'],
     ['DBD::SQLite' => '< 1.20', 'a lot of bugs.'],
+    ['Mouse' => '>= 1.07, < 1.12', 'Memory leaks in trigger'],
     ['Text::Xslate' => '< 1.0011', '&apos; bug.'],
     ['Text::Xslate' => '< 1.5021', 'segv in "render" recursion call'],
     ['Text::Xslate' => '< 1.6001', 'possibly memory leaks on VM stack frames. see https://github.com/xslate/p5-Text-Xslate/issues/71'],
