@@ -2,6 +2,10 @@ Revision history for Perl extension Module::Advisor
 
 {{$NEXT}}
 
+0.15 2013-09-29T01:50:45Z
+
+    - Notes Mouse's memory leak bug
+
 0.14 2013-04-30T22:51:05Z
 
     - Notes autobox 2.78

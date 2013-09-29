@@ -4,7 +4,7 @@
       "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.0.56, CPAN::Meta::Converter version 2.130880",
+   "generated_by" : "Minilla/v0.6.7, CPAN::Meta::Converter version 2.132510",
    "license" : [
       "unknown"
    ],
@@ -37,7 +37,7 @@
             "Test::CPAN::Meta" : "0",
             "Test::MinimumVersion" : "0.10108",
             "Test::Pod" : "1.41",
-            "Test::Spellunker" : "v0.2.2"
+            "Test::Spellunker" : "v0.2.7"
          }
       },
       "runtime" : {
@@ -67,7 +67,7 @@
          "web" : "https://github.com/tokuhirom/Module-Advisor"
       }
    },
-   "version" : "0.14",
+   "version" : "0.15",
    "x_contributors" : [
       "Daisuke Murase <typester@cpan.org>",
       "Syohei YOSHIDA <syohex@gmail.com>",
