@@ -5,7 +5,7 @@
 
 =head1 NAME
 
-Module::Advisor - check a modules you are installed
+Module::Advisor - check locally installed modules for known problems
 
 =head1 SYNOPSIS
 
@@ -14,21 +14,22 @@ Module::Advisor - check a modules you are installed
 
 =head1 DESCRIPTION
 
-Module::Advisor checks a modules you are installed, and notice if:
+Module::Advisor checks the modules you have installed,
+and reports if:
 
 =over 4
 
-=item There is a module, have known bugs.
+=item The version of any module you have installed has known bugs.
 
-=item There is a module, have optional XS module for better performance.
+=item There is an optional XS version for any of the modules you have installed.
 
-=item Your are using broken version of CPAN module.
+=item You are using a broken version of a module from CPAN.
 
 =back
 
 =head1 RULES
 
-Here is a rules to check the modules.
+Here are the rules used to check the modules.
 
 =head2 Modules have security issues.
 
@@ -36,7 +37,8 @@ Here is a rules to check the modules.
 
 =item Digest E<lt> 1.17
 
-have a security issue. which could lead to the injection of arbitrary Perl code
+have a security issue,
+which could lead to the injection of arbitrary Perl code
 
 =item Encode E<lt> 2.44
 
