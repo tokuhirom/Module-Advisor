@@ -2,6 +2,11 @@ Revision history for Perl extension Module::Advisor
 
 {{$NEXT}}
 
+0.16 2013-09-30T01:25:54Z
+
+    - Added script, basically the SYNOPSIS in a script
+      (Neil Bowers)
+
 0.15 2013-09-29T01:50:45Z
 
     - Notes Mouse's memory leak bug

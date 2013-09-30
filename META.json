@@ -1,5 +1,5 @@
 {
-   "abstract" : "check a modules you are installed",
+   "abstract" : "check locally installed modules for known problems",
    "author" : [
       "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
    ],
@@ -67,11 +67,12 @@
          "web" : "https://github.com/tokuhirom/Module-Advisor"
       }
    },
-   "version" : "0.15",
+   "version" : "0.16",
    "x_contributors" : [
       "Daisuke Murase <typester@cpan.org>",
       "Syohei YOSHIDA <syohex@gmail.com>",
       "Tatsuhiko Miyagawa <miyagawa@bulknews.net>",
-      "tokuhirom <tokuhirom@gmail.com>"
+      "Neil Bowers <neil@bowers.com>",
+      "Tokuhiro Matsuno <tokuhirom@gmail.com>"
    ]
 }
