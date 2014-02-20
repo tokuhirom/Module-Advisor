@@ -2,6 +2,10 @@ Revision history for Perl extension Module::Advisor
 
 {{$NEXT}}
 
+0.17 2014-02-20T08:00:49Z
+
+    - Notes about Plack::Middleware::AxsLog
+
 0.16 2013-09-30T01:25:54Z
 
     - Added script, basically the SYNOPSIS in a script
