@@ -228,7 +228,7 @@ Broken, http://d.hatena.ne.jp/gfx/20130208/1360283357
 
 =item Plack::Middleware::AxsLog == 0.20
 
-Missing backslash
+Missing \n
 
 
 =back

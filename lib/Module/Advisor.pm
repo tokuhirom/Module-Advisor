@@ -52,7 +52,7 @@ our @BUG = (
     ['Math::Random::MT' => '== 1.15', 'rand() took no notice of argument RT #78200'],
     ['Module::Install' => '== 1.04', 'Broken, http://weblog.bulknews.net/post/33907905561/do-not-ship-modules-with-module-install-1-04'],
     ['Mouse' => '== 1.04', 'Broken, http://d.hatena.ne.jp/gfx/20130208/1360283357'],
-    ['Plack::Middleware::AxsLog' => '== 0.20', 'Missing backslash'],
+    ['Plack::Middleware::AxsLog' => '== 0.20', 'Missing \n'],
 );
 
 our @XS = (
