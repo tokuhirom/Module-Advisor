@@ -5,7 +5,7 @@
 
 =head1 NAME
 
-Module::Advisor - check locally installed modules for known problems
+Module::Advisor - check a modules you are installed
 
 =head1 SYNOPSIS
 
@@ -14,22 +14,21 @@ Module::Advisor - check locally installed modules for known problems
 
 =head1 DESCRIPTION
 
-Module::Advisor checks the modules you have installed,
-and reports if:
+Module::Advisor checks a modules you are installed, and notice if:
 
 =over 4
 
-=item The version of any module you have installed has known bugs.
+=item There is a module, have known bugs.
 
-=item There is an optional XS version for any of the modules you have installed.
+=item There is a module, have optional XS module for better performance.
 
-=item You are using a broken version of a module from CPAN.
+=item Your are using broken version of CPAN module.
 
 =back
 
 =head1 RULES
 
-Here are the rules used to check the modules.
+Here is a rules to check the modules.
 
 =head2 Modules have security issues.
 
@@ -37,8 +36,7 @@ Here are the rules used to check the modules.
 
 =item Digest E<lt> 1.17
 
-have a security issue,
-which could lead to the injection of arbitrary Perl code
+have a security issue. which could lead to the injection of arbitrary Perl code
 
 =item Encode E<lt> 2.44
 
@@ -226,6 +224,11 @@ Broken, http://weblog.bulknews.net/post/33907905561/do-not-ship-modules-with-mod
 =item Mouse == 1.04
 
 Broken, http://d.hatena.ne.jp/gfx/20130208/1360283357
+
+
+=item Plack::Middleware::AxsLog == 0.20
+
+Missing backslash
 
 
 =back
